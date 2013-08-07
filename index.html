@@ -51,24 +51,41 @@
                 </div>
             </div>
             <div class="row pitch">
-                <div class="span6 video">
-                    <img src="wi-wiob_vs_kc-wi_manhattan-4.png" alt="Gene Expression Plot"/>
+                <div class="span6">
+                    <img src="wi-wiob_vs_kc-wi_manhattan-4.png" alt="Gene Expression Plot" />
                 </div>
                 <div class="span6">
                     <div>
-                        <form action="/test" method="post" enctype="multipart/form-data">
+                        <p class="lead">get started...</p>
+                        <form action="/upload" method="post" enctype="multipart/form-data">
                             File 1:
-                            <input type="file" name="datFile1" size="40"/>
-                            Invert Values:
+                            <br>
+                            <input type="file" name="file1" size="40"/>
+                            <br>
+                            Invert File 1 Values:
                             <input type="checkbox" name="invert1"/>
+                            <br>
+                            <br>
                             File 2:
-                            <input type="file" name="datFile2" size="40"/>
-                            Invert Values:
+                            <br>
+                            <input type="file" name="file2" size="40"/>
+                            <br>
+                            Invert File 2 Values:
                             <input type="checkbox" name="invert2"/>
+                            <br>
+                            <br>
                             Manhattan Distance:
-                            <input type="text" name="manhattan"/>
+                            <br>
+                            <input type="text" name="manhattan" value="4.0"/>
+                            <br>
                             Q Value:
-                            <input type="text" name="qvalue"/>
+                            <br>
+                            <input type="text" name="qvalue" value="0.05"/>
+                            <br>
+                            Security Token:
+                            <br>
+                            <input type="text" name="auth"/>
+                            <br>
                             <input type="submit" value="Upload" />
                         </form>
                     </div>
