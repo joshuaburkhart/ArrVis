@@ -1,0 +1,82 @@
+!!! 5
+html(lang='en')
+head
+    meta(charset='utf-8')
+    title My First Bitstarter
+    link(type='text/css', rel='stylesheet', href='https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-2.3.2.css')
+    style(type='text/css')
+      body {
+      padding-top: 20px;
+      padding-bottom: 40px;
+      }
+      .container {
+      width: 960px;
+      }
+      p.lead {
+      padding-top: 15px;
+      }
+      .navigation, .pitch, .section1, .section2, .faq, .footer {
+      padding: 10px 0px 10px 0px;
+      }
+      .video, .thermometer, .order, .social {
+      border: 1px dotted;
+      text-align: center;
+      }
+      .video {
+      /* Internal borders have 1px width, thus need to add 4 x 1px to 120px. */
+      height: 124px;
+      line-height: 124px;
+      }
+      .thermometer, .order, .social {
+      /* line-height to vertically center: http://phrogz.net/css/vertical-align/index.html */
+      height: 40px;
+      line-height: 40px;
+      }
+      div.row {
+      border: 1px solid;
+      }
+  body
+    .container
+      .row.heading
+        .span12
+          h1 ArrVis
+      .row.subheading
+        .span12
+          p.lead DNA Microarray Visualization Tool
+      .row.pitch
+        .span6
+          img(src='wi-wiob_vs_kc-wi_manhattan-4.png', alt='Gene Expression Plot')
+        .span6
+          div
+            p.lead get started...
+            form(action='/upload', method='post', enctype='multipart/form-data')
+              | File 1:
+              br
+              input(type='file', name='file1', size='40')
+              br
+              | Invert File 1 Values:
+              input(type='checkbox', name='invert1')
+              br
+              br
+              | File 2:
+              br
+              input(type='file', name='file2', size='40')
+              br
+              | Invert File 2 Values:
+              input(type='checkbox', name='invert2')
+              br
+              br
+              | Manhattan Distance:
+              br
+              input(type='text', name='manhattan', value='4.0')
+              br
+              | Q Value:
+              br
+              input(type='text', name='qvalue', value='0.05')
+              br
+              | Security Token:
+              br
+              input(type='text', name='auth')
+              br
+              input(type='submit', value='Upload')
+
