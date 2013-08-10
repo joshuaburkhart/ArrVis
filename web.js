@@ -7,6 +7,9 @@ var path = require('path');
 var jade = require('jade');
 var execSync = require('execSync');
 
+app.configure(function(){
+    app.use(express.static(__dirname + '/'));
+});
 app.use(express.logger());
 app.use(express.bodyParser());
 AWS.config.update({region: 'us-west-1'});
@@ -23,8 +26,21 @@ s3.putObject({Body: 'Hello!'}, function() {
 });
 */
 
-app.get('/wi-wiob_vs_kc-wi_manhattan-4.png', function(request, response) {
-    response.sendfile(path.resolve('images/wi-wiob_vs_kc-wi_manhattan-4.png'));
+app.get('/two-d', function(request, response) {
+    var contents = jade.renderFile('jade/two-d.jade');
+    response.send(contents.toString());
+});
+app.get('/dist', function(request, response) {
+    var contents = jade.renderFile('jade/dist.jade');
+    response.send(contents.toString());
+});
+app.get('/overlay', function(request, response) {
+    var contents = jade.renderFile('jade/overlay.jade');
+    response.send(contents.toString());
+});
+app.get('/three-d', function(request, response) {
+    var contents = jade.renderFile('jade/three-d.jade');
+    response.send(contents.toString());
 });
 
 app.post('/upload', function(request, response) {
