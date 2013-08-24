@@ -24,6 +24,10 @@ var s3 = new AWS.S3({params: {Bucket: 'arrvis', Key: 'myKey'}});
 s3.putObject({Body: 'Hello!'}, function() {
     console.log("Successfully uploaded data to arrvis/myKey");
 });
+
+parsing
+use scriptular...^([A-Z0-9]+)\s+([0-9-]+(\.[0-9]+)?)
+matches Gene with $1 and M with $2
 */
 
 app.get('/two-d', function(request, response) {
