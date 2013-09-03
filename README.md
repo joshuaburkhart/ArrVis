@@ -11,3 +11,11 @@ Dev. Instructions
     $ foreman start
 3. use http://scriptular.com/ regex editor
 4. use node interactive js shell
+
+Use Cases
+---------
+
+1. user has two MA data files to compare and doesn't want to highlight any particular sequence(s) 
+2. user has two MA data files to compare and wants to highlight sequences by manhattan, euclidean, larger abs min, or other distance measure
+3. user has two MA data files and one additional MA data file with preselected sequences to highlight and overlay
+4. user has three MA data files and doesn't want to highlight any particular sequence(s)
